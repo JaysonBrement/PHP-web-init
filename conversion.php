@@ -9,29 +9,28 @@
         <input class="mt-3 text-center col-6" type="submit" value="Convertir">
     </form>
     <div class="d-flex column justify-content-center mt-2">
-        <div class="pd-5 pd-5 col-md-4 text-center text-wrap shadow rounded bg-warning p-5">
-                    
-                    <p class="fw-bold fs-3 text-white">
-                        <?php
+        <div class="pd-5 pd-5 col-md-4 text-center text-wrap shadow rounded bg-warning p-5">        
+            <p class="fw-bold fs-3 text-white">
+                <?php
                     $line=0;
-            
-
                     if (empty($_POST['chiffre'])) {
-                echo "---";
-            }else{
-                $nb=$_POST['chiffre'];
-                aratorom($nb);
-            }
+                        echo "---";
+                    }else{
+                        $nb=$_POST['chiffre'];
+                        aratorom($nb);
+                    }
                 ?>
-                </p>
+                
                     
+                    
+                    
+                </p>
+            </p>
         </div>
     </div>
 </div>
 
-
 <?php
-$content =ob_get_clean();
-require "template.php";
+    $content =ob_get_clean();
+    require "template.php";
 ?>
-

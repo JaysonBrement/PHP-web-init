@@ -12,10 +12,10 @@
   <div id="bigheader" class="bg-black d-flex-row">
     
   <div id="top" class="d-flex">
-    <div id="part1" class="col-6">
+    <div id="part1" class="col-5">
     <a href="index.php"><img src="/image/php.png"></a>
     </div>
-    <div id="part2" class="col-6">
+    <div id="part2" class="col-7">
       <h1 class="text-white">PHP Procédural</h1>
       <h5 class="text-white">j'apprend et je me perfectionne</h5>
     </div>
