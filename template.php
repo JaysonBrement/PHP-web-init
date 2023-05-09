@@ -7,17 +7,19 @@
     <title>PHP-WEB</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="../style.css">
+  </head>
 <header>
   <div id="bigheader" class="bg-black d-flex-row">
     
   <div id="top" class="d-flex">
     <div id="part1" class="col-5">
-    <a href="index.php"><img src="/image/php.png"></a>
+    <a href="../index.php"><img src="/image/php.png"></a>
     </div>
     <div id="part2" class="col-7">
       <h1 class="text-white">PHP Procédural</h1>
       <h5 class="text-white">j'apprend et je me perfectionne</h5>
+      <a href="/test/test.php">page de test</a>
     </div>
   </div>
   <div id="bottom ">

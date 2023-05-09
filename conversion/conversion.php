@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<?php require "fonction.php"; ?>
+<?php require "../fonction.php"; ?>
 
 <div class="d-flex justify-content-center row">
     <h1 class="text-center row-6">Conversion en chiffre romain</h1>
@@ -32,5 +32,5 @@
 
 <?php
     $content =ob_get_clean();
-    require "template.php";
+    require "../template.php";
 ?>
