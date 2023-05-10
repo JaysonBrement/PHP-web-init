@@ -1,19 +1,23 @@
 <?php ob_start() ?>
 <?php session_start() ?>
 <?php require "../fonction.php"; ?>
-<h1><a href="session.php">rafraichir</a></h1>
+<div class="container-fluid d-flex row justify-content-center text-center">
+<div class="container-fluid row-6 text-center">
 <?php
   if(isset($_SESSION['nom']) && isset($_SESSION['prénom'])&& isset($_SESSION['age'])&& isset($_SESSION['taille'])){
-    echo '<div class="container d-flex justify-content-start">
-    <ul class="list-group col-3">
-    <form class ="card "method="POST">
-    <input type="submit" name="1" class="btn-primary" value="deboggage">
-    <input type="submit" name="2" class="btn-primary" value="concatenation">
-    <input type="submit" name="3" class="btn-primary" value="boucle">
-    <input type="submit" name="4" class="btn-primary" value="fonction">
-    <input type="submit" name="5" class="btn-primary" value="supprimer">
-    </form>
-    </ul>
+    echo '<div class="machin">
+    <div class="container d-flex row justify-content-center">
+        <ul class="list-group">  
+            <form class ="card p-3 mt-5 d-flex justify-content-start col-6" id="truc" method="POST">
+        <a class="btn btn-primary mb-5 col-3" href="session.php">home</a>
+        <input type="submit" name="1" class="mt-1 mb-1 btn btn-primary" value="deboggage">
+        <input type="submit" name="2" class="mt-1 mb-1 btn btn-primary" value="concatenation">
+        <input type="submit" name="3" class="mt-1 mb-1 btn btn-primary" value="boucle">
+        <input type="submit" name="4" class="mt-1 mb-1 btn btn-primary" value="fonction">
+        <input type="submit" name="5" class="mt-1 mb-1 btn btn-primary" value="supprimer">
+        </form>
+        </ul>
+    </div>
     </div>';
     foreach($_SESSION as $key=>$value){
       $table[$key]=$value;
@@ -25,34 +29,45 @@
               print_r($table);
               break;
           case (array_key_exists('2', $_POST)):
-            foreach($table as $key=>$value){                //transforme maj première lettre prénom
+            foreach($table as $key=>$value){
+              if($key=='sexe'){
+                if($value=='homme'){
+                  echo 'Mr';
+                }else{
+                  echo 'Mme';
+                }
+              }
               if($key=='prénom'){
-                  $table[$key]=ucfirst($table[$key]);
-                  echo "Mr $value ";
+                  $value=ucfirst($table[$key]);
+                  echo "$value ";
               }
               if($key=='nom'){
-                  $table[$key]=strtoupper($table[$key]);
+                  $value=strtoupper($table[$key]);
                   echo "$value";
               }
               if($key=='age'){
                 echo "<br></br> J'ai $value ans et je mesure ";
               }
               if($key=='taille'){
-                  $table[$key]=str_replace('.', ',', $table[$key]);
+                  $value=str_replace('.', ',', $table[$key]);
                   echo "$value";
               }
               
           }
               break;
           case (array_key_exists('3', $_POST)):
-              echo "bouton3";
+            $ligne=0;
+            foreach($table as $key=>$value){
+                echo "à la ligne $ligne correspond la clé '$key' et contient '$value'<br></br>";
+                $ligne++;
+            }
               break;
           case (array_key_exists('4', $_POST)):
-              echo "bouton4";
+              readtable($table);
               break;
           case (array_key_exists('5', $_POST)):
               session_destroy();
-              header("location:session.php");
+              header('location:session.php');
               break;
           
       
@@ -62,32 +77,39 @@
 else{
 echo '
 <div class="container row d-flex justify-content-center">
-<a href="session.php"><button type="button" class="btn btn-primary col-3">Primary</button></a>
-<div id="sessioncard" class="card d-flex col-8 justify-content-center text-center">
+
+<div id="sessioncard" class="card d-flex col-8 justify-content-center  mt-5">
     <form action="traitement.php" method="POST">
       <div class="form-group">
-        <label class=" display-5"for="exampleInputEmail1">prénom</label>
-        <input type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="prénom"name="prénom">
+        <label class=" display-5 mb-3"for="exampleInputEmail1">prénom</label>
+        <input type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="prénom"name="prénom" required>
       </div>
       <div class="form-group">
-        <label class=" display-5" for="exampleInputPassword1">nom</label>
-        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="nom"name="nom">
+        <label class=" display-5 mb-3" for="exampleInputPassword1">nom</label>
+        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="nom"name="nom"required>
       </div>
       <div class="form-group">
-        <label class=" display-5" for="exampleInputPassword1">age</label>
-        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="age"name="age">
+        <label class=" display-5 mb-3" for="exampleInputPassword1">age</label>
+        <input type="text" class="form-control mb-3" id="exampleInputPassword1" placeholder="age"name="age"required>
       </div>
-      <div class="form-group">
-        <label class=" display-5" for="exampleInputPassword1">taille</label>
-        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="taille"name="taille">
-      </div>
-      <button type="submit"value="Envoyer" class="btn btn-primary ">submit</button>
+      <div class="mb-3 input-group"><span class="input-group-text">Taille (1,26m à 3m)</span><input type="text" aria-label="First name" class="form-control" name="taille"required></div>
+      <div class="form-check">
+      <input type="radio" class="form-check-input" id="radio1" name="sexe" value="homme" checked>homme 
+      <label class="form-check-label mb-3" for="radio1"></label>
+    </div>
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="radio2" name="sexe" value="femme">femme
+      <label class="form-check-label" for="radio2"></label>
+    </div>
+
+      <button type="submit"value="Envoyer" class="btn btn-primary mb-3">submit</button>
     </form>
   </div>
 </div>
 ';
 }
-?>
+?></div>
+</div>
 
 <?php
     $content =ob_get_clean();

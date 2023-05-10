@@ -25,6 +25,13 @@ function exprctrl($expr){
         echo "Prérequis non remplis";
     }
 }
+function readtable($table){
+$ligne=0;
+foreach($table as $key=>$value){
+    echo "à la ligne $ligne correspond la clé '$key' et contient '$value'<br></br>";
+    $ligne++;
+}
+}
 ?>
 
     <!-- INTERDIT MAIS FONCTIONEL -->

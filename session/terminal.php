@@ -5,18 +5,10 @@ $table=[];
 foreach($session as $key=>$value){
     $table[$key]=$value;
 }
-foreach($table as $key=>$value){                //transforme maj première lettre prénom
-    if($key=='prénom'){
-        $table[$key]=ucfirst($table[$key]);
-    }
-    if($key=='nom'){
-        $table[$key]=strtoupper($table[$key]);
-    }
-    if($key=='taille'){
-        $table[$key]=str_replace('.', ',', $table[$key]);
-    }
-}
+
+$ligne=0;
 foreach($table as $key=>$value){
-    echo "$key=>$value ";
+    echo "à la ligne $ligne correspond la clé '$key' et contient '$value'<br></br>";
+    $ligne++;
 }
 ?>

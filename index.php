@@ -23,7 +23,7 @@
         <div class="pd-5 col-md-4 text-left text-black shadow rounded bg-white p-5">
             <p class="fw-bold fs-3 ">Groundbreaking low prices</p>
             <p class=" ">Lorem ipsum dolor sit, amet consectetur adispisicing elit. Natus edispisci consectetur unde debitis ab facilis.</p>
-            <button type="button" class="btn btn-black  fs-5 border-dark mb-2">Look at the ranking</button>
+            <button type="button" class="btn btn-black  fs-5 border-dark mb-2"><a href="./traduction/accueil.php">Look at the ranking</a></button>
         </div>
 </div>
 <?php

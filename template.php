@@ -14,7 +14,7 @@
     
   <div id="top" class="d-flex">
     <div id="part1" class="col-5">
-    <a href="../index.php"><img src="/image/php.png"></a>
+    <a href="../index.php"><img class="mb-3"src="/image/php.png"></a>
     </div>
     <div id="part2" class="col-7">
       <h1 class="text-white">PHP Procédural</h1>
@@ -31,8 +31,6 @@
   </div>
     
   </div>
-    
-  
 </header>
 <?= $content ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
