@@ -3,7 +3,9 @@
 <form method="POST">
 </form>
     
+<?php
 
+?>
 
 <?php
     $content =ob_get_clean();

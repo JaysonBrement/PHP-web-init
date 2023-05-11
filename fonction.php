@@ -20,7 +20,7 @@ while($chiffre>0){
 function exprctrl($expr){
     $aled ='[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|-|"|#|\')).{8,}$]'; // je sais pas pourquoi ça marche, mais confirme si il y a au moins :1 maj, 1min, 1 nombre,1 caractère spéciale, 8 caractères
     if(preg_match($aled,$expr)){
-        echo "ça me parait cohérent";
+        echo "Prérequis remplis";
     }else{
         echo "Prérequis non remplis";
     }
