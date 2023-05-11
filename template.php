@@ -21,6 +21,7 @@
       <h5 class="text-white">j'apprend et je me perfectionne</h5>
       <a href="/test/test.php">page de test</a>
       <a href="/correction session/session.php">correction</a>
+      <a href="/exemple cookies/index.php">cookies</a>
       
     </div>
   </div>
